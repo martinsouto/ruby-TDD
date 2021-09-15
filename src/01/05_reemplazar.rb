@@ -7,6 +7,12 @@
 # Finalmente, podés consultar el porcentaje de código cubierto por los tests al
 # abrir con tu navegador web el archivo `coverage/index.html`.
 
-# def reemplazar(str)
-#   # ...
-# end
+def reemplazar(str)
+  #encontre dos formas de hacerlo, la segunda parece mucho mas generalizable
+  #str.gsub("{","do\n").gsub("}","\nend")
+  str.gsub(/[{}]/, {"{" => "do\n", "}" => "\nend"})
+end
+
+#probando si funciona
+#res = reemplazar("3.times { |i| puts i }")
+#puts(res)
